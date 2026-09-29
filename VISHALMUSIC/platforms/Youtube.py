@@ -45,7 +45,7 @@ _formats_lock = asyncio.Lock()
 VISHAL_API_KEY = "Artistbotslqk72hsztb1bc"
 
 # API 1: Primary Vishal API (Direct Download)
-PRIMARY_API_URL = "https://www.artistbotsapi.bond"
+PRIMARY_API_URL = "https://artistbotsapi.bond"
 # Endpoint: /download?url={video_id}&type=audio&api_key={KEY}
 # Response: Direct file download
 
@@ -182,6 +182,7 @@ async def download_song_primary_api(link: str) -> str:
         async with session.get(
             f"{PRIMARY_API_URL}/download",
             params=params,
+            ssl=False 
             timeout=aiohttp.ClientTimeout(total=120),
         ) as response:
             if response.status != 200:
@@ -218,6 +219,7 @@ async def download_video_primary_api(link: str) -> str:
         async with session.get(
             f"{PRIMARY_API_URL}/download",
             params=params,
+            ssl=False
             timeout=aiohttp.ClientTimeout(total=180),
         ) as response:
             if response.status != 200:
