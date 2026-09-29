@@ -42,10 +42,10 @@ _formats_cache: Dict[str, Tuple[float, List[Dict], str]] = {}
 _formats_lock = asyncio.Lock()
 
 # ============ API CONFIGURATION ============
-VISHAL_API_KEY = "ArtistbotshAUfCkB"
+VISHAL_API_KEY = "Artistbotslqk72hsztb1bc"
 
 # API 1: Primary Vishal API (Direct Download)
-PRIMARY_API_URL = "https://music.artistbots.workers.dev"
+PRIMARY_API_URL = "https://www.artistbotsapi.bond"
 # Endpoint: /download?url={video_id}&type=audio&api_key={KEY}
 # Response: Direct file download
 
@@ -55,7 +55,7 @@ FALLBACK_API_URL = "http://13.212.126.0:2020"
 # Endpoint 2: /stream/{video_id}?type=audio with header X-Download-Token
 
 # API URLs loaded status
-PRIMARY_API_LOADED = False
+PRIMARY_API_LOADED = True
 FALLBACK_API_LOADED = False
 
 # ============ RATE LIMITING (async â€” does NOT block the event loop) ============
