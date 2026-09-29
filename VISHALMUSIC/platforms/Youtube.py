@@ -194,8 +194,10 @@ async def download_song_primary_api(link: str) -> str:
         if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
             return file_path
         return None
-    except Exception:
-        return None
+    except Exception as e:
+    _module_logger.error(f"❌ Primary API Error details: {e}")
+    return None
+    
 
 
 async def download_video_primary_api(link: str) -> str:
